@@ -1,0 +1,117 @@
+/**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme. The accent color is brown.
+ *
+ * This theme is Copyright (C) 2012-2013 Owen Versteeg, http://owenversteeg.com - it is MIT licensed.
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+$mainColor: #C0C0F0;
+$mainFontSize: 1.5em;
+$headingFont: 'Palatino Linotype', 'Book Antiqua', Palatino, FreeSerif, serif;
+$headingColor: #6272A4;
+$headingTextShadow: none;
+$headingTextTransform: none;
+$heading1Size: 3em;
+$backgroundColor: #282A36;
+$cardBackgroundColor: #383A46;
+$linkColor: #8BE9FD;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: #44475A;
+
+$overlayElementBgColor: 0, 0, 0;
+$overlayElementFgColor: 240, 240, 240;
+
+.reveal a {
+	line-height: 1.3em;
+}
+
+.presentation-slide {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+
+	.presentation-title {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.presentation-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+}
+
+.slide-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+	height: 500px;
+
+	.text-image {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row;
+		gap: 50px;
+
+		.images {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: row;
+			gap: 10px
+		}
+	}
+}
+
+
+.feature-card-container {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-direction: row;
+	gap: 50px;
+
+	.feature-card-item {
+		border: 1px solid $linkColor;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+		width: 300px;
+		padding: 20px;
+		background-color: $cardBackgroundColor;
+
+		h2 {
+			font-size: 1.5em;
+		}
+		
+		.emoji {
+			font-size: 2em;
+		}
+	}
+
+	.feature-card-item:hover{
+		box-shadow: 0 0 5px rgba(0,255, 240, 0.7), 0 0 20px rgba(184, 150, 255, 0.7), 0 0 30px rgba(123, 168, 255, 0.7);
+	}
+}
+
+// Change text colors against dark slide backgrounds
+@include dark-bg-text-color(#fff);
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
